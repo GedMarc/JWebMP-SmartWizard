@@ -1,0 +1,9 @@
+{
+  "directory": "jar-resources/META-INF/resources/bower_components",
+  "ignoredDependencies": [
+    "jquery",
+    "font-awesome",
+    "angular",
+    "bootstrap"
+  ]
+}
