@@ -29,7 +29,7 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
 public enum SmartWizardReferencePool implements ReferencePool
 {
 	SmartWizardReference(new JavascriptReference("SmartWizard", 1.0, "bower_components/smartwizard/dist/js/jquery.smartWizard.js"),
-	                     new CSSReference("SmartWizard", 1.0, "bower_components/smartwizard/dist/css/smart_wizard.css"));
+	                     new CSSReference("SmartWizard", 1.0, "bower_components/smartwizard/dist/css/smart_wizard.css")),;
 	/**
 	 * The actual javascript
 	 */

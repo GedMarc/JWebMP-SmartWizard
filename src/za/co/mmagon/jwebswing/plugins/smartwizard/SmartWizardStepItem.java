@@ -6,12 +6,14 @@ import za.co.mmagon.jwebswing.base.html.SmallText;
 
 public class SmartWizardStepItem extends ListItem<SmartWizardStepItem>
 {
+	private String title;
 	private Link stepLink;
-	private SmallText stepTitle;
+	private SmallText stepDescription;
 	
-	public SmartWizardStepItem(SmallText stepTitle)
+	public SmartWizardStepItem(String title, SmallText stepDescription)
 	{
-		this.stepTitle = stepTitle;
+		this.title = title;
+		this.stepDescription = stepDescription;
 	}
 	
 	@Override
@@ -21,9 +23,10 @@ public class SmartWizardStepItem extends ListItem<SmartWizardStepItem>
 		{
 			if (stepLink == null)
 			{
-				stepLink = new Link("#step_" + getID() + "_" + getParent().getChildren().indexOf(this));
+				stepLink = new Link<>("#step_" + getID() + "_" + getParent().getChildren().indexOf(this)).setText(title + "<br/>");
 			}
-			stepLink.add(stepTitle);
+			stepLink.setRenderTextBeforeChildren(true);
+			stepLink.add(stepDescription);
 			add(stepLink);
 		}
 		super.init();

@@ -146,7 +146,7 @@ public class SmartWizardToolbarSettings extends JavaScriptPart
 	 *
 	 * @return
 	 */
-	public SmartWizardToolbarSettings setToolbarExtraButtons(List<JavascriptFunction> toolbarExtraButtons)
+	public SmartWizardToolbarSettings setToolbarExtraButtons(@NotNull List<JavascriptFunction> toolbarExtraButtons)
 	{
 		this.toolbarExtraButtons = toolbarExtraButtons;
 		return this;

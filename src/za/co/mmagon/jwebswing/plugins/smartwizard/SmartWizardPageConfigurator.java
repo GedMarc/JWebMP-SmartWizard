@@ -62,8 +62,7 @@ public class SmartWizardPageConfigurator extends PageConfigurator
 		{
 			page.addJavaScriptReference(SmartWizardReferencePool.SmartWizardReference.getJavaScriptReference());
 			page.addCssReference(SmartWizardReferencePool.SmartWizardReference.getCssReference());
-			
-			page.addCssReference(SmartWizardThemes.Arrows.getThemeReference());
+			page.addCssReference(SmartWizardThemes.Circles.getThemeReference());
 		}
 		return page;
 	}

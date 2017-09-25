@@ -69,6 +69,30 @@ public class SmartWizardFeature extends Feature<SmartWizardOptions, SmartWizardF
 		requiredString += getOptions().toString();
 		requiredString += ");" + getNewLine();
 		addQuery(requiredString);
+		
+		addQuery(getComponent().getJQueryID() + "on(\"leaveStep\", function(e, anchorObject, stepNumber, stepDirection) {\n" +
+				         "                var elmForm = $(\"#form-step-\" + stepNumber);\n" +
+				         "                // stepDirection === 'forward' :- this condition allows to do the form validation \n" +
+				         "                // only on forward navigation, that makes easy navigation on backwards still do the validation when going next\n" +
+				         "                if(stepDirection === 'forward' && elmForm){\n" +
+				         "                    elmForm.validator('validate'); \n" +
+				         "                    var elmErr = elmForm.children('.has-error');\n" +
+				         "                    if(elmErr && elmErr.length > 0){\n" +
+				         "                        // Form validation failed\n" +
+				         "                        return false;    \n" +
+				         "                    }\n" +
+				         "                }\n" +
+				         "                return true;\n" +
+				         "            });");
+		
+		addQuery(getComponent().getJQueryID() + "on(\"showStep\", function(e, anchorObject, stepNumber, stepDirection) {\n" +
+				         "                // Enable finish button only on last step\n" +
+				         "                if(stepNumber == " + (getComponent().getChildren().size() - 1) + "){ \n" +
+				         "                    $('.btn-finish').removeClass('disabled');  \n" +
+				         "                }else{\n" +
+				         "                    $('.btn-finish').addClass('disabled');\n" +
+				         "                }\n" +
+				         "            });");
 	}
 	
 	@Override

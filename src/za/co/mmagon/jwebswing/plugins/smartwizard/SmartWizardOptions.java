@@ -17,10 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.smartwizard;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.plugins.smartwizard.options.SmartWizardAjaxSettings;
-import za.co.mmagon.jwebswing.plugins.smartwizard.options.SmartWizardLangOptions;
-import za.co.mmagon.jwebswing.plugins.smartwizard.options.SmartWizardToolbarSettings;
-import za.co.mmagon.jwebswing.plugins.smartwizard.options.SmartWizardTransitionEffects;
+import za.co.mmagon.jwebswing.plugins.smartwizard.options.*;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -111,6 +108,11 @@ public class SmartWizardOptions extends JavaScriptPart
 	 * An array with grouped settings for the toolbar
 	 */
 	private SmartWizardToolbarSettings toolbarSettings;
+	/**
+	 * List of anchor settings
+	 */
+	private SmartWizardAnchorSettings anchorSettings;
+	
 	
 	/**
 	 * The options for the component
@@ -491,6 +493,33 @@ public class SmartWizardOptions extends JavaScriptPart
 	}
 	
 	/**
+	 * An array with grouped settings for the anchor
+	 *
+	 * @return
+	 */
+	public SmartWizardAnchorSettings getAnchorSettings()
+	{
+		if (anchorSettings == null)
+		{
+			anchorSettings = new SmartWizardAnchorSettings();
+		}
+		return anchorSettings;
+	}
+	
+	/**
+	 * An array with grouped settings for the anchor
+	 *
+	 * @param anchorSettings
+	 *
+	 * @return
+	 */
+	public SmartWizardOptions setAnchorSettings(SmartWizardAnchorSettings anchorSettings)
+	{
+		this.anchorSettings = anchorSettings;
+		return this;
+	}
+	
+	/**
 	 * An array with language variables
 	 *
 	 * @return
@@ -523,8 +552,13 @@ public class SmartWizardOptions extends JavaScriptPart
 	 *
 	 * @return
 	 */
+	@NotNull
 	public SmartWizardToolbarSettings getToolbarSettings()
 	{
+		if (toolbarSettings == null)
+		{
+			toolbarSettings = new SmartWizardToolbarSettings();
+		}
 		return toolbarSettings;
 	}
 	

@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "smartwizard": "*"
+    "smartwizard": "*",
+    "bootstrap-validator": "*"
   }
 }
