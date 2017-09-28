@@ -12,6 +12,8 @@ class SmartWizardTest extends BaseTestClass
 	{
 		SmartWizard sw = new SmartWizard();
 		sw.getSteps().add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
+		sw.getSteps().add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
+		sw.getSteps().add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
 		System.out.println(sw.toString(0));
 	}
 	
@@ -46,6 +48,8 @@ class SmartWizardTest extends BaseTestClass
 		sw.getFeature().getOptions().setTransitionEffect(SmartWizardTransitionEffects.slide);
 		
 		System.out.println(sw.renderJavascript());
+		
+		System.out.println(sw.toString(0));
 	}
 	
 }

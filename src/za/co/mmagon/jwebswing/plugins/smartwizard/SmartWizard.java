@@ -23,10 +23,7 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	 * The actual steps
 	 */
 	private List<SmartWizardStep> steps;
-	/**
-	 * The actual content div
-	 */
-	private Div contentDivs;
+
 	
 	/**
 	 * Configures the page for this component
@@ -43,17 +40,18 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 		{
 			getFeature().getOptions().getToolbarSettings().getToolbarExtraButtons().add(new SmartWizardFinishFunction());
 			getFeature().getOptions().getToolbarSettings().getToolbarExtraButtons().add(new SmartWizardCancelFunction());
+			za.co.mmagon.jwebswing.base.html.List stepList = new za.co.mmagon.jwebswing.base.html.List();
+			Div actualContent = new Div();
 			for (SmartWizardStep step : getSteps())
 			{
-				za.co.mmagon.jwebswing.base.html.List stepList = new za.co.mmagon.jwebswing.base.html.List();
 				stepList.add(step.getStepTitle());
-				
-				getContentDivs().add(step.getStepContents());
-				step.getStepContents().setID("step_" + step.getStepTitle().getID() + "_" + stepList.getChildren().indexOf(step.getStepTitle()));
-				
-				add(stepList);
-				add(getContentDivs());
+				actualContent.add(step.getStepContents());
+				int index = getSteps().indexOf(step);
+				step.getStepTitle().setID(step.getStepTitle().getID() + "_" + index);
+				step.getStepContents().setID("step_" + step.getStepTitle().getID() + "_" + index);
 			}
+			add(stepList);
+			add(actualContent);
 		}
 		super.init();
 	}
@@ -80,41 +78,9 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	 *
 	 * @return
 	 */
-	public J setSteps(List<SmartWizardStep> steps)
+	public J setSteps(@NotNull List<SmartWizardStep> steps)
 	{
 		this.steps = steps;
-		return (J) this;
-	}
-	
-	/**
-	 * Returns the content div
-	 *
-	 * @return
-	 */
-	@NotNull
-	protected Div getContentDivs()
-	{
-		if (contentDivs == null)
-		{
-			setContentDivs(new Div());
-		}
-		return contentDivs;
-	}
-	
-	/**
-	 * Sets the content divs
-	 *
-	 * @param contentDivs
-	 *
-	 * @return
-	 */
-	protected J setContentDivs(Div contentDivs)
-	{
-		this.contentDivs = contentDivs;
-		if (this.contentDivs != null)
-		{
-		
-		}
 		return (J) this;
 	}
 	

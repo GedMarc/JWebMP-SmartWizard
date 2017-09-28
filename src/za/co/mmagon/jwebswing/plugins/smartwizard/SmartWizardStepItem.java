@@ -23,7 +23,7 @@ public class SmartWizardStepItem extends ListItem<SmartWizardStepItem>
 		{
 			if (stepLink == null)
 			{
-				stepLink = new Link<>("#step_" + getID() + "_" + getParent().getChildren().indexOf(this)).setText(title + "<br/>");
+				stepLink = new Link<>("#step_" + getID()).setText(title + "<br/>");
 			}
 			stepLink.setRenderTextBeforeChildren(true);
 			stepLink.add(stepDescription);
