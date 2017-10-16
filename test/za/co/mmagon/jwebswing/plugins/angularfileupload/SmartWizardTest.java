@@ -1,6 +1,6 @@
 package za.co.mmagon.jwebswing.plugins.angularfileupload;
 
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.SmallText;
 import za.co.mmagon.jwebswing.plugins.angularfileupload.options.SmartWizardTransitionEffects;
