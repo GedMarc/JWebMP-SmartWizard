@@ -29,15 +29,15 @@ import java.util.List;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 4, 2015
  */
 public class SmartWizardOptions extends JavaScriptPart
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * specify the selected step on the first load Default 0
 	 **/
@@ -99,7 +99,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	 * Number or String Default 400
 	 **/
 	private Integer transitionSpeed;
-	
+
 	/**
 	 * An array with grouped settings for the toolbar
 	 */
@@ -112,16 +112,16 @@ public class SmartWizardOptions extends JavaScriptPart
 	 * List of anchor settings
 	 */
 	private SmartWizardAnchorSettings anchorSettings;
-	
-	
+
+
 	/**
 	 * The options for the component
 	 */
 	public SmartWizardOptions()
 	{
-		
+		//Nothing Needed
 	}
-	
+
 	/**
 	 * specify the selected step on the first load Default 0
 	 *
@@ -131,8 +131,8 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return selected;
 	}
-	
-	
+
+
 	/**
 	 * specify the selected step on the first load Default 0
 	 *
@@ -145,7 +145,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.selected = selected;
 		return this;
 	}
-	
+
 	/**
 	 * enable/disable left/right keys are used if enabled Default    key navigation. Default TRUE
 	 *
@@ -155,7 +155,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return keyNavigation;
 	}
-	
+
 	/**
 	 * enable/disable left/right keys are used if enabled Default    key navigation. Default TRUE
 	 *
@@ -168,7 +168,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.keyNavigation = keyNavigation;
 		return this;
 	}
-	
+
 	/**
 	 * Automatically adjust content height Default TRUE
 	 *
@@ -178,7 +178,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return autoAdjustHeight;
 	}
-	
+
 	/**
 	 * Automatically adjust content height Default TRUE
 	 *
@@ -191,7 +191,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.autoAdjustHeight = autoAdjustHeight;
 		return this;
 	}
-	
+
 	/**
 	 * Allows to cycle the navigation of steps Default FALSE
 	 *
@@ -201,7 +201,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return cycleSteps;
 	}
-	
+
 	/**
 	 * Allows to cycle the navigation of steps Default FALSE
 	 *
@@ -214,7 +214,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.cycleSteps = cycleSteps;
 		return this;
 	}
-	
+
 	/**
 	 * Enable the back button support Default TRUE
 	 *
@@ -224,7 +224,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return backButtonSupport;
 	}
-	
+
 	/**
 	 * Enable the back button support Default TRUE
 	 *
@@ -237,7 +237,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.backButtonSupport = backButtonSupport;
 		return this;
 	}
-	
+
 	/**
 	 * Enable selection of the step based on url hash Default TRUE
 	 *
@@ -247,7 +247,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return useURLhash;
 	}
-	
+
 	/**
 	 * Enable selection of the step based on url hash Default TRUE
 	 *
@@ -260,7 +260,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.useURLhash = useURLhash;
 		return this;
 	}
-	
+
 	/**
 	 * Show url hash based on step Default TRUE
 	 *
@@ -270,7 +270,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return showStepURLhash;
 	}
-	
+
 	/**
 	 * Show url hash based on step Default TRUE
 	 *
@@ -283,7 +283,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.showStepURLhash = showStepURLhash;
 		return this;
 	}
-	
+
 	/**
 	 * Specify the ajax content url, setting null will disable ajax contents. If you want to use ajax content only for a specific step just add a data-content-url with the anchor tag of the step header Default null  **/
 	/**
@@ -295,7 +295,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return contentCache;
 	}
-	
+
 	/**
 	 * Specify the ajax content url, setting null will disable ajax contents. If you want to use ajax content only for a specific step just add a data-content-url with the anchor tag of the step header Default null  **/
 	/**
@@ -310,7 +310,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.contentCache = contentCache;
 		return this;
 	}
-	
+
 	/**
 	 * Provide extra settings for step ajax content calls Default {}
 	 *
@@ -325,7 +325,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		}
 		return ajaxSettings;
 	}
-	
+
 	/**
 	 * Provide extra settings for step ajax content calls Default {}
 	 *
@@ -338,7 +338,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.ajaxSettings = ajaxSettings;
 		return this;
 	}
-	
+
 	/**
 	 * an array of step numbers to show as disabled Default []
 	 *
@@ -353,7 +353,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		}
 		return disabledSteps;
 	}
-	
+
 	/**
 	 * an array of step numbers to show as disabled Default []
 	 *
@@ -366,7 +366,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.disabledSteps = disabledSteps;
 		return this;
 	}
-	
+
 	/**
 	 * an array of step numbers to show as error steps Default []
 	 *
@@ -381,7 +381,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		}
 		return errorSteps;
 	}
-	
+
 	/**
 	 * an array of step numbers to show as error steps Default []
 	 *
@@ -394,7 +394,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.errorSteps = errorSteps;
 		return this;
 	}
-	
+
 	/**
 	 * an array of step numbers to be hidden Default []
 	 *
@@ -409,7 +409,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		}
 		return hiddenSteps;
 	}
-	
+
 	/**
 	 * an array of step numbers to be hidden Default []
 	 *
@@ -422,7 +422,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.hiddenSteps = hiddenSteps;
 		return this;
 	}
-	
+
 	/**
 	 * name of the theme to use. Remember to include the theme css also Default 'default'
 	 *
@@ -432,7 +432,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return theme;
 	}
-	
+
 	/**
 	 * name of the theme to use. Remember to include the theme css also Default 'default'
 	 *
@@ -445,7 +445,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.theme = theme;
 		return this;
 	}
-	
+
 	/**
 	 * Animation effect on step navigation Default none
 	 *
@@ -455,7 +455,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return transitionEffect;
 	}
-	
+
 	/**
 	 * Animation effect on step navigation Default none
 	 *
@@ -468,7 +468,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.transitionEffect = transitionEffect;
 		return this;
 	}
-	
+
 	/**
 	 * Number or String Default 400
 	 *
@@ -478,7 +478,7 @@ public class SmartWizardOptions extends JavaScriptPart
 	{
 		return transitionSpeed;
 	}
-	
+
 	/**
 	 * Number or String Default 400
 	 *
@@ -491,7 +491,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.transitionSpeed = transitionSpeed;
 		return this;
 	}
-	
+
 	/**
 	 * An array with grouped settings for the anchor
 	 *
@@ -505,7 +505,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		}
 		return anchorSettings;
 	}
-	
+
 	/**
 	 * An array with grouped settings for the anchor
 	 *
@@ -518,7 +518,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.anchorSettings = anchorSettings;
 		return this;
 	}
-	
+
 	/**
 	 * An array with language variables
 	 *
@@ -533,7 +533,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		}
 		return lang;
 	}
-	
+
 	/**
 	 * An array with language variables
 	 *
@@ -546,7 +546,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		this.lang = lang;
 		return this;
 	}
-	
+
 	/**
 	 * An array with grouped settings for the toolbar
 	 *
@@ -561,7 +561,7 @@ public class SmartWizardOptions extends JavaScriptPart
 		}
 		return toolbarSettings;
 	}
-	
+
 	/**
 	 * An array with grouped settings for the toolbar
 	 *

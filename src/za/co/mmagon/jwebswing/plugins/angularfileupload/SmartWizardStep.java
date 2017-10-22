@@ -2,8 +2,12 @@ package za.co.mmagon.jwebswing.plugins.angularfileupload;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 
-public class SmartWizardStep
+import java.io.Serializable;
+
+public class SmartWizardStep implements Serializable
 {
+
+	private static final long serialVersionUID = 1L;
 	/**
 	 * The actual contents of the step
 	 */
@@ -12,7 +16,7 @@ public class SmartWizardStep
 	 * The step title
 	 */
 	private SmartWizardStepItem stepTitle;
-	
+
 	/**
 	 * Initial Constructor
 	 */
@@ -20,7 +24,7 @@ public class SmartWizardStep
 	{
 		//Nothing Needed
 	}
-	
+
 	/**
 	 * Construct a new Smart Wizard Step with the given items
 	 *
@@ -32,8 +36,8 @@ public class SmartWizardStep
 		this.stepContents = stepContents;
 		this.stepTitle = stepTitle;
 	}
-	
-	
+
+
 	/**
 	 * Returns the step contents
 	 *
@@ -43,7 +47,7 @@ public class SmartWizardStep
 	{
 		return stepContents;
 	}
-	
+
 	/**
 	 * Sets the step contents for this item
 	 *
@@ -56,7 +60,7 @@ public class SmartWizardStep
 		this.stepContents = stepContents;
 		return this;
 	}
-	
+
 	/**
 	 * Returns the step title
 	 *
@@ -66,7 +70,7 @@ public class SmartWizardStep
 	{
 		return stepTitle;
 	}
-	
+
 	/**
 	 * @param stepTitle
 	 *

@@ -28,11 +28,12 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 	 * Enable/Disable the done steps navigation
 	 */
 	private Boolean enableAnchorOnDoneStep;
-	
+
 	public SmartWizardAnchorSettings()
 	{
+		//Nothing required
 	}
-	
+
 	/**
 	 * Enable or disable the click option on the step header anchors
 	 *
@@ -42,7 +43,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 	{
 		return anchorClickable;
 	}
-	
+
 	/**
 	 * Enable or disable the click option on the step header anchors
 	 *
@@ -55,7 +56,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 		this.anchorClickable = anchorClickable;
 		return this;
 	}
-	
+
 	/**
 	 * Enable all anchors on load
 	 *
@@ -65,7 +66,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 	{
 		return enableAllAnchors;
 	}
-	
+
 	/**
 	 * Enable all anchors on load
 	 *
@@ -78,7 +79,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 		this.enableAllAnchors = enableAllAnchors;
 		return this;
 	}
-	
+
 	/**
 	 * Make already visited steps as done
 	 *
@@ -88,7 +89,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 	{
 		return markDoneStep;
 	}
-	
+
 	/**
 	 * Make already visited steps as done
 	 *
@@ -101,7 +102,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 		this.markDoneStep = markDoneStep;
 		return this;
 	}
-	
+
 	/**
 	 * When a step selected by url hash, all previous steps are marked done
 	 *
@@ -111,7 +112,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 	{
 		return markAllPreviousStepsAsDone;
 	}
-	
+
 	/**
 	 * When a step selected by url hash, all previous steps are marked done
 	 *
@@ -124,7 +125,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 		this.markAllPreviousStepsAsDone = markAllPreviousStepsAsDone;
 		return this;
 	}
-	
+
 	/**
 	 * While navigate back done step after active step will be cleared
 	 *
@@ -134,7 +135,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 	{
 		return removeDoneStepOnNavigateBack;
 	}
-	
+
 	/**
 	 * While navigate back done step after active step will be cleared
 	 *
@@ -147,7 +148,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 		this.removeDoneStepOnNavigateBack = removeDoneStepOnNavigateBack;
 		return this;
 	}
-	
+
 	/**
 	 * Enable/Disable the done steps navigation
 	 *
@@ -157,7 +158,7 @@ public class SmartWizardAnchorSettings extends JavaScriptPart
 	{
 		return enableAnchorOnDoneStep;
 	}
-	
+
 	/**
 	 * Enable/Disable the done steps navigation
 	 *

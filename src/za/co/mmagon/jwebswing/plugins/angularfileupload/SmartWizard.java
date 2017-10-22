@@ -24,15 +24,17 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	 */
 	private List<SmartWizardStep> steps;
 
-	
+
 	/**
 	 * Configures the page for this component
 	 */
 	public SmartWizard()
 	{
-		addFeature(feature = new SmartWizardFeature(this));
+
+		feature = new SmartWizardFeature(this);
+		addFeature(feature);
 	}
-	
+
 	@Override
 	public void init()
 	{
@@ -55,7 +57,7 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 		}
 		super.init();
 	}
-	
+
 	/**
 	 * Gets the current steps for this wizard
 	 *
@@ -70,7 +72,7 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 		}
 		return steps;
 	}
-	
+
 	/**
 	 * Sets the steps for this Smart Wizard
 	 *
@@ -83,7 +85,7 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 		this.steps = steps;
 		return (J) this;
 	}
-	
+
 	/**
 	 * Returns this feature
 	 *
@@ -93,5 +95,39 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	public SmartWizardFeature getFeature()
 	{
 		return feature;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof SmartWizard))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		SmartWizard<?> that = (SmartWizard<?>) o;
+
+		if (!getFeature().equals(that.getFeature()))
+		{
+			return false;
+		}
+		return getSteps().equals(that.getSteps());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + getSteps().hashCode();
+		return result;
 	}
 }
