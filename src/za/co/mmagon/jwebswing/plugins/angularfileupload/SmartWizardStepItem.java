@@ -20,6 +20,7 @@ public class SmartWizardStepItem extends ListItem<SmartWizardStepItem>
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public void init()
 	{
 		if (!isInitialized())
@@ -57,20 +58,12 @@ public class SmartWizardStepItem extends ListItem<SmartWizardStepItem>
 		{
 			return false;
 		}
-		if (stepLink != null ? !stepLink.equals(that.stepLink) : that.stepLink != null)
-		{
-			return false;
-		}
-		return stepDescription != null ? stepDescription.equals(that.stepDescription) : that.stepDescription == null;
+		return (stepLink != null ? stepLink.equals(that.stepLink) : that.stepLink == null) && (stepDescription != null ? stepDescription.equals(that.stepDescription) : that.stepDescription == null);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + (title != null ? title.hashCode() : 0);
-		result = 31 * result + (stepLink != null ? stepLink.hashCode() : 0);
-		result = 31 * result + (stepDescription != null ? stepDescription.hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

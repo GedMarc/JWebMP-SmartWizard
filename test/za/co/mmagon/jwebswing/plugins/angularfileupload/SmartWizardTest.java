@@ -8,6 +8,7 @@ import za.co.mmagon.jwebswing.plugins.angularfileupload.options.SmartWizardTrans
 class SmartWizardTest extends BaseTestClass
 {
 	@org.junit.jupiter.api.Test
+	@SuppressWarnings("unchecked")
 	public void testHtml()
 	{
 		SmartWizard sw = new SmartWizard();
