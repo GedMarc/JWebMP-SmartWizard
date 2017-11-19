@@ -5,7 +5,7 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.SmallText;
 import za.co.mmagon.jwebswing.plugins.angularfileupload.options.SmartWizardTransitionEffects;
 
-class SmartWizardTest extends BaseTestClass
+public class SmartWizardTest extends BaseTestClass
 {
 	@org.junit.jupiter.api.Test
 	@SuppressWarnings("unchecked")
