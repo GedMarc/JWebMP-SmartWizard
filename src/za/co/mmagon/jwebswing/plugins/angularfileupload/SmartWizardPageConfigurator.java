@@ -22,6 +22,7 @@ import za.co.mmagon.jwebswing.plugins.PluginInformation;
 		pluginLastUpdatedDate = "2017/09/22"
 )
 @Singleton
+@SuppressWarnings("unused")
 public class SmartWizardPageConfigurator extends PageConfigurator
 {
 	

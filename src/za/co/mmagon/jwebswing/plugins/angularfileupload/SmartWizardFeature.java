@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
  *
@@ -53,6 +55,7 @@ public class SmartWizardFeature extends Feature<SmartWizardOptions, SmartWizardF
 	 * @return
 	 */
 	@Override
+	@NotNull
 	public SmartWizardOptions getOptions()
 	{
 		if (options == null)

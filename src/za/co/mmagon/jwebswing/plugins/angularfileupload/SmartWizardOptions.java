@@ -33,7 +33,7 @@ import java.util.List;
  * 		<p>
  * @since Mar 4, 2015
  */
-public class SmartWizardOptions extends JavaScriptPart
+public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScriptPart<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -99,7 +99,6 @@ public class SmartWizardOptions extends JavaScriptPart
 	 * Number or String Default 400
 	 **/
 	private Integer transitionSpeed;
-
 	/**
 	 * An array with grouped settings for the toolbar
 	 */
