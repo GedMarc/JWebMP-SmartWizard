@@ -36,12 +36,14 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public void init()
 	{
 		if (!isInitialized())
 		{
 			getFeature().getOptions().getToolbarSettings().getToolbarExtraButtons().add(new SmartWizardFinishFunction());
 			getFeature().getOptions().getToolbarSettings().getToolbarExtraButtons().add(new SmartWizardCancelFunction());
+
 			za.co.mmagon.jwebswing.base.html.List stepList = new za.co.mmagon.jwebswing.base.html.List();
 			Div actualContent = new Div();
 			for (SmartWizardStep step : getSteps())
@@ -80,6 +82,7 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public J setSteps(@NotNull List<SmartWizardStep> steps)
 	{
 		this.steps = steps;
