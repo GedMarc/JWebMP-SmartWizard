@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,8 +28,8 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
  */
 public enum SmartWizardReferencePool implements ReferencePool
 {
-	SmartWizardReference(new JavascriptReference("SmartWizard", 1.0, "bower_components/angularfileupload/dist/js/jquery.smartWizard.js"),
-	                     new CSSReference("SmartWizard", 1.0, "bower_components/angularfileupload/dist/css/smart_wizard.css")),;
+	SmartWizardReference(new JavascriptReference("SmartWizard", 1.0, "bower_components/smartwizard/dist/js/jquery.smartWizard.js"),
+	                     new CSSReference("SmartWizard", 1.0, "bower_components/smartwizard/dist/css/smart_wizard.css")),;
 	/**
 	 * The actual javascript
 	 */
@@ -38,14 +38,14 @@ public enum SmartWizardReferencePool implements ReferencePool
 	 * The actual css reference
 	 */
 	private CSSReference cssReference;
-	
+
 	/**
 	 * Constructs a reference pool
 	 */
 	SmartWizardReferencePool()
 	{
 	}
-	
+
 	/**
 	 * Constructs a new reference pool
 	 *
@@ -57,7 +57,7 @@ public enum SmartWizardReferencePool implements ReferencePool
 		this.javaScriptReference = javaScriptReference;
 		this.cssReference = cssReference;
 	}
-	
+
 	/**
 	 * Returns the javascript reference
 	 *
@@ -68,7 +68,7 @@ public enum SmartWizardReferencePool implements ReferencePool
 	{
 		return javaScriptReference;
 	}
-	
+
 	/**
 	 * Sets the javascript reference
 	 *
@@ -79,7 +79,7 @@ public enum SmartWizardReferencePool implements ReferencePool
 	{
 		this.javaScriptReference = javaScriptReference;
 	}
-	
+
 	/**
 	 * Gets the cSS reference
 	 *
@@ -90,7 +90,7 @@ public enum SmartWizardReferencePool implements ReferencePool
 	{
 		return cssReference;
 	}
-	
+
 	/**
 	 * Sets the CSS Reference
 	 *
