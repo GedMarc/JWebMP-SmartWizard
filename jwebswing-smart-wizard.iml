@@ -11,12 +11,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="guice-injection" />
-    <orderEntry type="module" module-name="jwebswing" />
-    <orderEntry type="module" module-name="guice-injection" />
-    <orderEntry type="module" module-name="log-master" />
-    <orderEntry type="module" module-name="jwebswing-interception" />
-    <orderEntry type="module" module-name="jwebswing" scope="TEST" production-on-test="" />
     <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:1.5.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:1.10.19" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
