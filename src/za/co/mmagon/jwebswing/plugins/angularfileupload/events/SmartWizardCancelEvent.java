@@ -6,21 +6,21 @@ import za.co.mmagon.jwebswing.base.ajax.AjaxResponse;
 
 public abstract class SmartWizardCancelEvent extends Event
 {
-	
+
 	public SmartWizardCancelEvent()
 	{
-		super("SmartWizardFinishEvent");
+		super("SmartWizardCancelEvent");
 	}
-	
-	public void onFinish(AjaxCall call, AjaxResponse response)
-	{
-	
-	}
-	
+
 	@Override
 	public void fireEvent(AjaxCall call, AjaxResponse response)
 	{
 		super.fireEvent(call, response);
-		onFinish(call, response);
+		onCancel(call, response);
+	}
+
+	public void onCancel(AjaxCall call, AjaxResponse response)
+	{
+
 	}
 }

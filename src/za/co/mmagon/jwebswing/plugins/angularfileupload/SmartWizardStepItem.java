@@ -39,26 +39,7 @@ public class SmartWizardStepItem extends ListItem<SmartWizardStepItem>
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof SmartWizardStepItem))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		SmartWizardStepItem that = (SmartWizardStepItem) o;
-
-		if (title != null ? !title.equals(that.title) : that.title != null)
-		{
-			return false;
-		}
-		return (stepLink != null ? stepLink.equals(that.stepLink) : that.stepLink == null) && (stepDescription != null ? stepDescription.equals(that.stepDescription) : that.stepDescription == null);
+		return super.equals(o);
 	}
 
 	@Override

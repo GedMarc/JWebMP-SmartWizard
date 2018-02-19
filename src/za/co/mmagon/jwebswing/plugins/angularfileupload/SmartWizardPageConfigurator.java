@@ -25,9 +25,9 @@ import za.co.mmagon.jwebswing.plugins.PluginInformation;
 @SuppressWarnings("unused")
 public class SmartWizardPageConfigurator extends PageConfigurator
 {
-	
-	private static SmartWizardThemes theme = SmartWizardThemes.Arrows;
-	
+
+	private static SmartWizardThemes theme = SmartWizardThemes.Circles;
+
 	/**
 	 * Configures the page for this component
 	 */
@@ -35,7 +35,7 @@ public class SmartWizardPageConfigurator extends PageConfigurator
 	{
 		//Nothing Needed
 	}
-	
+
 	/**
 	 * Gets the current theme
 	 *
@@ -45,7 +45,7 @@ public class SmartWizardPageConfigurator extends PageConfigurator
 	{
 		return theme;
 	}
-	
+
 	/**
 	 * Sets the current theme
 	 *
@@ -55,7 +55,7 @@ public class SmartWizardPageConfigurator extends PageConfigurator
 	{
 		SmartWizardPageConfigurator.theme = theme;
 	}
-	
+
 	@Override
 	public Page configure(Page page)
 	{
@@ -63,7 +63,7 @@ public class SmartWizardPageConfigurator extends PageConfigurator
 		{
 			page.addJavaScriptReference(SmartWizardReferencePool.SmartWizardReference.getJavaScriptReference());
 			page.addCssReference(SmartWizardReferencePool.SmartWizardReference.getCssReference());
-			page.addCssReference(SmartWizardThemes.Circles.getThemeReference());
+			page.addCssReference(theme.getThemeReference());
 		}
 		return page;
 	}

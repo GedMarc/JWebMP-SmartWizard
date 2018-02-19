@@ -10,9 +10,9 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@ComponentInformation(name = "SmartWizard"
-		, description = "Smart Wizard is a flexible and heavily customizable jQuery step wizard plugin with Bootstrap support. "
-		, url = "https://github.com/GedMarc/JWebSwing-SmartWizard")
+@ComponentInformation(name = "SmartWizard",
+		description = "Smart Wizard is a flexible and heavily customizable jQuery step wizard plugin " + "with Bootstrap support. ",
+		url = "https://github.com/GedMarc/JWebSwing-SmartWizard")
 public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 {
 	/**
@@ -28,9 +28,9 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	/**
 	 * Configures the page for this component
 	 */
-	public SmartWizard()
+	public SmartWizard(String id)
 	{
-
+		setID(id);
 		feature = new SmartWizardFeature(this);
 		addFeature(feature);
 	}
@@ -41,8 +41,14 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	{
 		if (!isInitialized())
 		{
-			getFeature().getOptions().getToolbarSettings().getToolbarExtraButtons().add(new SmartWizardFinishFunction());
-			getFeature().getOptions().getToolbarSettings().getToolbarExtraButtons().add(new SmartWizardCancelFunction());
+			getFeature().getOptions()
+					.getToolbarSettings()
+					.getToolbarExtraButtons()
+					.add(new SmartWizardFinishFunction());
+			getFeature().getOptions()
+					.getToolbarSettings()
+					.getToolbarExtraButtons()
+					.add(new SmartWizardCancelFunction());
 
 			za.co.mmagon.jwebswing.base.html.List stepList = new za.co.mmagon.jwebswing.base.html.List();
 			Div actualContent = new Div();
@@ -51,8 +57,12 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 				stepList.add(step.getStepTitle());
 				actualContent.add(step.getStepContents());
 				int index = getSteps().indexOf(step);
-				step.getStepTitle().setID(step.getStepTitle().getID() + "_" + index);
-				step.getStepContents().setID("step_" + step.getStepTitle().getID() + "_" + index);
+				step.getStepTitle()
+						.setID(step.getStepTitle()
+								       .getID() + "_" + index);
+				step.getStepContents()
+						.setID("step_" + step.getStepTitle()
+								                 .getID() + "_" + index);
 			}
 			add(stepList);
 			add(actualContent);
@@ -103,34 +113,12 @@ public class SmartWizard<J extends SmartWizard<J>> extends DivSimple<J>
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof SmartWizard))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		SmartWizard<?> that = (SmartWizard<?>) o;
-
-		if (!getFeature().equals(that.getFeature()))
-		{
-			return false;
-		}
-		return getSteps().equals(that.getSteps());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		result = 31 * result + getSteps().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

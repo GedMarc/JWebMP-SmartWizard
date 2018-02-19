@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -66,7 +66,8 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 * Show url hash based on step Default TRUE
 	 **/
 	private Boolean showStepURLhash;
-	/** Specify the ajax content url, setting null will disable ajax contents. If you want to use ajax content only for a specific step just add a data-content-url with the anchor tag of the step header Default null  **/
+	/** Specify the ajax content url, setting null will disable ajax contents. If you want to use ajax content only for a specific step
+	 * just add a data-content-url with the anchor tag of the step header Default null  **/
 	/**
 	 * On or Off caching of step contents on ajax calls, if false content is fetched always from ajax url Default TRUE
 	 **/
@@ -139,10 +140,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setSelected(Integer selected)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setSelected(Integer selected)
 	{
 		this.selected = selected;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -162,10 +165,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setKeyNavigation(Boolean keyNavigation)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setKeyNavigation(Boolean keyNavigation)
 	{
 		this.keyNavigation = keyNavigation;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -185,10 +190,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setAutoAdjustHeight(Boolean autoAdjustHeight)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setAutoAdjustHeight(Boolean autoAdjustHeight)
 	{
 		this.autoAdjustHeight = autoAdjustHeight;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -208,10 +215,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setCycleSteps(Boolean cycleSteps)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setCycleSteps(Boolean cycleSteps)
 	{
 		this.cycleSteps = cycleSteps;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -231,10 +240,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setBackButtonSupport(Boolean backButtonSupport)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setBackButtonSupport(Boolean backButtonSupport)
 	{
 		this.backButtonSupport = backButtonSupport;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -254,10 +265,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setUseURLhash(Boolean useURLhash)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setUseURLhash(Boolean useURLhash)
 	{
 		this.useURLhash = useURLhash;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -277,14 +290,17 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setShowStepURLhash(Boolean showStepURLhash)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setShowStepURLhash(Boolean showStepURLhash)
 	{
 		this.showStepURLhash = showStepURLhash;
-		return this;
+		return (J) this;
 	}
 
 	/**
-	 * Specify the ajax content url, setting null will disable ajax contents. If you want to use ajax content only for a specific step just add a data-content-url with the anchor tag of the step header Default null  **/
+	 * Specify the ajax content url, setting null will disable ajax contents. If you want to use ajax content only for a specific step
+	 * just add a data-content-url with the anchor tag of the step header Default null  **/
 	/**
 	 * On or Off caching of step contents on ajax calls, if false content is fetched always from ajax url Default TRUE
 	 *
@@ -296,7 +312,8 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	}
 
 	/**
-	 * Specify the ajax content url, setting null will disable ajax contents. If you want to use ajax content only for a specific step just add a data-content-url with the anchor tag of the step header Default null  **/
+	 * Specify the ajax content url, setting null will disable ajax contents. If you want to use ajax content only for a specific step
+	 * just add a data-content-url with the anchor tag of the step header Default null  **/
 	/**
 	 * On or Off caching of step contents on ajax calls, if false content is fetched always from ajax url Default TRUE
 	 *
@@ -304,10 +321,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setContentCache(Boolean contentCache)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setContentCache(Boolean contentCache)
 	{
 		this.contentCache = contentCache;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -332,10 +351,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setAjaxSettings(SmartWizardAjaxSettings ajaxSettings)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setAjaxSettings(SmartWizardAjaxSettings ajaxSettings)
 	{
 		this.ajaxSettings = ajaxSettings;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -360,10 +381,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setDisabledSteps(List<Integer> disabledSteps)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setDisabledSteps(List<Integer> disabledSteps)
 	{
 		this.disabledSteps = disabledSteps;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -388,10 +411,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setErrorSteps(List<Integer> errorSteps)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setErrorSteps(List<Integer> errorSteps)
 	{
 		this.errorSteps = errorSteps;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -416,10 +441,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setHiddenSteps(List<Integer> hiddenSteps)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setHiddenSteps(List<Integer> hiddenSteps)
 	{
 		this.hiddenSteps = hiddenSteps;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -439,10 +466,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setTheme(SmartWizardThemes theme)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setTheme(SmartWizardThemes theme)
 	{
 		this.theme = theme;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -462,10 +491,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setTransitionEffect(SmartWizardTransitionEffects transitionEffect)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setTransitionEffect(SmartWizardTransitionEffects transitionEffect)
 	{
 		this.transitionEffect = transitionEffect;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -478,17 +509,18 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 		return transitionSpeed;
 	}
 
+	@SuppressWarnings("unchecked")
+	@NotNull
 	/**
 	 * Number or String Default 400
 	 *
 	 * @param transitionSpeed
 	 *
 	 * @return
-	 */
-	public SmartWizardOptions setTransitionSpeed(Integer transitionSpeed)
+	 */ public J setTransitionSpeed(Integer transitionSpeed)
 	{
 		this.transitionSpeed = transitionSpeed;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -512,10 +544,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setAnchorSettings(SmartWizardAnchorSettings anchorSettings)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setAnchorSettings(SmartWizardAnchorSettings anchorSettings)
 	{
 		this.anchorSettings = anchorSettings;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -540,10 +574,12 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setLang(SmartWizardLangOptions lang)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setLang(SmartWizardLangOptions lang)
 	{
 		this.lang = lang;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -568,9 +604,11 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>> extends JavaScr
 	 *
 	 * @return
 	 */
-	public SmartWizardOptions setToolbarSettings(SmartWizardToolbarSettings toolbarSettings)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setToolbarSettings(SmartWizardToolbarSettings toolbarSettings)
 	{
 		this.toolbarSettings = toolbarSettings;
-		return this;
+		return (J) this;
 	}
 }
