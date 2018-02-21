@@ -1,6 +1,7 @@
 package za.co.mmagon.jwebswing.plugins.angularfileupload.events;
 
 import za.co.mmagon.jwebswing.Event;
+import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.ajax.AjaxCall;
 import za.co.mmagon.jwebswing.base.ajax.AjaxResponse;
 
@@ -12,6 +13,11 @@ public abstract class SmartWizardCancelEvent extends Event
 		super("SmartWizardCancelEvent");
 	}
 
+	public SmartWizardCancelEvent(ComponentHierarchyBase component)
+	{
+		super(component);
+	}
+
 	@Override
 	public void fireEvent(AjaxCall call, AjaxResponse response)
 	{
@@ -19,8 +25,11 @@ public abstract class SmartWizardCancelEvent extends Event
 		onCancel(call, response);
 	}
 
-	public void onCancel(AjaxCall call, AjaxResponse response)
+	@Override
+	protected void assignFunctionsToComponent()
 	{
-
+		//addQuery();
 	}
+
+	public abstract void onCancel(AjaxCall call, AjaxResponse response);
 }

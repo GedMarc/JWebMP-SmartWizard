@@ -4,20 +4,20 @@ import za.co.mmagon.jwebswing.Event;
 import za.co.mmagon.jwebswing.base.ajax.AjaxCall;
 import za.co.mmagon.jwebswing.base.ajax.AjaxResponse;
 
-public abstract class SmartWizardFinishEvent extends Event
+public abstract class SmartWizardPreviousEvent extends Event
 {
 
-	public SmartWizardFinishEvent()
+	public SmartWizardPreviousEvent()
 	{
-		super("SmartWizardFinishEvent");
+		super("SmartWizardPreviousEvent");
 	}
 
-	public abstract void onFinish(AjaxCall call, AjaxResponse response);
-	
 	@Override
 	public void fireEvent(AjaxCall call, AjaxResponse response)
 	{
 		super.fireEvent(call, response);
-		onFinish(call, response);
+		onPrevious(call, response);
 	}
+
+	public abstract void onPrevious(AjaxCall call, AjaxResponse response);
 }
