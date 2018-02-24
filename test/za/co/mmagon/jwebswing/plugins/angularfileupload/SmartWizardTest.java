@@ -4,7 +4,11 @@ import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.SmallText;
-import za.co.mmagon.jwebswing.plugins.angularfileupload.options.SmartWizardTransitionEffects;
+import za.co.mmagon.jwebswing.plugins.smartwizard.SmartWizard;
+import za.co.mmagon.jwebswing.plugins.smartwizard.SmartWizardStep;
+import za.co.mmagon.jwebswing.plugins.smartwizard.SmartWizardStepItem;
+import za.co.mmagon.jwebswing.plugins.smartwizard.SmartWizardThemes;
+import za.co.mmagon.jwebswing.plugins.smartwizard.options.SmartWizardTransitionEffects;
 
 public class SmartWizardTest extends BaseTestClass
 {

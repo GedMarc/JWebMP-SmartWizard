@@ -147,6 +147,16 @@
             <scope>test</scope>
             <type>test-jar</type>
         </dependency>
+
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>jwebswing-bootstrap</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
