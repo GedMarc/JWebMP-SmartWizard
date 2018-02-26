@@ -5,8 +5,6 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.smartwizard.interfaces.SmartWizardFeatures;
-import za.co.mmagon.jwebswing.plugins.smartwizard.options.functions.SmartWizardCancelFunction;
-import za.co.mmagon.jwebswing.plugins.smartwizard.options.functions.SmartWizardFinishFunction;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -43,14 +41,14 @@ public class SmartWizard<J extends SmartWizard<J>> extends Div<GlobalChildren, N
 	{
 		if (!isInitialized())
 		{
-			getFeature().getOptions()
+		/*	getFeature().getOptions()
 					.getToolbarSettings()
 					.getToolbarExtraButtons()
 					.add(new SmartWizardFinishFunction());
 			getFeature().getOptions()
 					.getToolbarSettings()
 					.getToolbarExtraButtons()
-					.add(new SmartWizardCancelFunction());
+					.add(new SmartWizardCancelFunction());*/
 
 			za.co.mmagon.jwebswing.base.html.List stepList = new za.co.mmagon.jwebswing.base.html.List();
 			Div actualContent = new Div();
