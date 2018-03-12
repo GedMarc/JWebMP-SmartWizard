@@ -1,4 +1,4 @@
-/*!  
+/*!
  * SmartWizard v4.x
  * jQuery Wizard Plugin
  * http://www.techlaboratory.net/smartwizard
@@ -41,7 +41,6 @@
 }
 
 .sw-theme-arrows > ul.step-anchor {
-    display: block;
     border: 0;
     border-bottom: 1px solid #ddd;
     padding: 0px;
@@ -54,7 +53,7 @@
     /*margin: -1px -1px 0 -1px -1px;*/;
 }
 
-.sw-theme-arrows > ul.step-anchor li + li:before {
+.sw-theme-arrows > ul.step-anchor li+li:before {
     padding: 0;
 }
 
@@ -94,7 +93,7 @@
     width: 0;
     height: 0;
     border-top: 50px solid transparent;
-    /* Go big on the size, and let overflow hide */
+           /* Go big on the size, and let overflow hide */
     border-bottom: 50px solid transparent;
     border-left: 30px solid #ddd;
     position: absolute;

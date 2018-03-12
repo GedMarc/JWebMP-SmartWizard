@@ -20,37 +20,37 @@ var DEST_CSS = 'dist/css';
 
 // JS TASKS
 // Lint JS
-gulp.task('lint:js', function () {
+gulp.task('lint:js', function() {
     return gulp.src(SRC_JS)
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'))
-        .pipe(jshint.reporter('fail'));
+            .pipe(jshint())
+            .pipe(jshint.reporter('default'))
+            .pipe(jshint.reporter('fail'));
 });
 
 // Build JS
-gulp.task('build:js', ['clean:js', 'lint:js'], function () {
+gulp.task('build:js', ['clean:js', 'lint:js'], function() {
     return gulp.src(SRC_JS)
-        .pipe(babel())
-        .pipe(gulp.dest(DEST_JS))
-        .pipe(uglify({preserveComments: 'license'}))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(DEST_JS));
+            .pipe(babel())
+            .pipe(gulp.dest(DEST_JS))
+            .pipe(uglify({preserveComments:'license'}))
+            .pipe(rename({suffix: '.min'}))
+            .pipe(gulp.dest(DEST_JS));
 });
 
 // CSS TASKS
 gulp.task('build:css', ['clean:css'], function () {
     return gulp.src(SRC_CSS)
-        .pipe(postcss([autoprefixer({browsers: ['last 10 versions']})]))
-        .pipe(cssbeautify({autosemicolon: true}))
-        .pipe(gulp.dest(DEST_CSS))
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(DEST_CSS));
+            .pipe(postcss( [autoprefixer({browsers: ['last 10 versions']})] ))
+            .pipe(cssbeautify({ autosemicolon: true }))
+            .pipe(gulp.dest(DEST_CSS))
+            .pipe(cleanCSS({compatibility: 'ie8'}))
+            .pipe(rename({suffix: '.min'}))
+            .pipe(gulp.dest(DEST_CSS));
 });
 
 // CLEAN files
 gulp.task('clean', function () {
-    gulp.start('clean:js', 'clean:css');
+    gulp.start( 'clean:js', 'clean:css');
 });
 
 gulp.task('clean:js', function () {
@@ -62,7 +62,7 @@ gulp.task('clean:css', function () {
 });
 
 // WATCH for file changes and rerun the task
-gulp.task('watch', function () {
+gulp.task('watch', function() {
     gulp.watch('./src/js/*.js', ['build:js']);
     gulp.watch('./src/css/*.css', ['build:css']);
 });
@@ -70,14 +70,14 @@ gulp.task('watch', function () {
 // TEST
 gulp.task('test', function (done) {
     new karma.Server({
-        configFile: __dirname + '/karma.conf.js',
-        singleRun: true
-    }, function () {
+      configFile: __dirname + '/karma.conf.js',
+      singleRun: true
+    }, function() {
         done();
     }).start();
 });
 
 // DEFAULT task
-gulp.task('default', function () {
-    gulp.start('build:js', 'build:css');
+gulp.task('default', function() {
+    gulp.start( 'build:js', 'build:css' );
 });

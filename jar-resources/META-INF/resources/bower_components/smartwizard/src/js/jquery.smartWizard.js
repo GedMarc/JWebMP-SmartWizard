@@ -1,6 +1,6 @@
-/*! 
- * SmartWizard v4.1.7
- * jQuery Wizard Plugin
+/*!
+ * SmartWizard v4.2.2
+ * The awesome jQuery step wizard plugin with Bootstrap support
  * http://www.techlaboratory.net/smartwizard
  *
  * Created by Dipu Raj
@@ -13,21 +13,22 @@
 ;(function ($, window, document, undefined) {
     "use strict";
     // Default options
+
     var defaults = {
-        selected: 0,  // Initial selected step, 0 = first step
+        selected: 0, // Initial selected step, 0 = first step
         keyNavigation: true, // Enable/Disable keyboard navigation(left and right keys are used if enabled)
         autoAdjustHeight: true, // Automatically adjust content height
         cycleSteps: false, // Allows to cycle the navigation of steps
         backButtonSupport: true, // Enable the back button support
         useURLhash: true, // Enable selection of the step based on url hash
         showStepURLhash: true, // Show url hash based on step
-        lang: {  // Language variables for button
+        lang: { // Language variables for button
             next: 'Next',
             previous: 'Previous'
         },
         toolbarSettings: {
             toolbarPosition: 'bottom', // none, top, bottom, both
-            toolbarButtonPosition: 'right', // left, right
+            toolbarButtonPosition: 'end', // start, end
             showNextButton: true, // show/hide a Next button
             showPreviousButton: true, // show/hide a Previous button
             toolbarExtraButtons: [] // Extra buttons to show on toolbar, array of jQuery input/buttons elements
@@ -90,7 +91,7 @@
                     var elm = $("a[href*='" + hash + "']", this.nav);
                     if (elm.length > 0) {
                         var id = this.steps.index(elm);
-                        idx = (id >= 0) ? id : idx;
+                        idx = id >= 0 ? id : idx;
                     }
                 }
             }
@@ -104,13 +105,14 @@
             this._showStep(idx);
         },
 
-// PRIVATE FUNCTIONS
+        // PRIVATE FUNCTIONS
 
         _setElements: function () {
             // Set the main element
             this.main.addClass('sw-main sw-theme-' + this.options.theme);
             // Set anchor elements
-            this.nav.addClass('nav nav-tabs step-anchor'); // nav-justified  nav-pills
+            this.nav.addClass('nav nav-tabs step-anchor').children('li').addClass('nav-item').children('a').addClass('nav-link'); // nav-justified  nav-pills
+
             // Make the anchor clickable
             if (this.options.anchorSettings.enableAllAnchors !== false && this.options.anchorSettings.anchorClickable !== false) {
                 this.steps.parent('li').addClass('clickable');
@@ -118,7 +120,7 @@
             // Set content container
             this.container.addClass('sw-container tab-content');
             // Set content pages
-            this.pages.addClass('step-content');
+            this.pages.addClass('tab-pane step-content');
 
             // Disabled steps
             var mi = this;
@@ -147,17 +149,18 @@
             if (this.options.toolbarSettings.toolbarPosition === 'none') {
                 return true;
             }
+            console.log(this.options.toolbarSettings.toolbarPosition);
 
             // Create the toolbar buttons
-            var btnNext = (this.options.toolbarSettings.showNextButton !== false) ? $('<button></button>').text(this.options.lang.next).addClass('btn btn-default sw-btn-next').attr('type', 'button') : null;
-            var btnPrevious = (this.options.toolbarSettings.showPreviousButton !== false) ? $('<button></button>').text(this.options.lang.previous).addClass('btn btn-default sw-btn-prev').attr('type', 'button') : null;
-            var btnGroup = $('<div></div>').addClass('btn-group navbar-btn sw-btn-group pull-' + this.options.toolbarSettings.toolbarButtonPosition).attr('role', 'group').append(btnPrevious, btnNext);
+            var btnNext = this.options.toolbarSettings.showNextButton !== false ? $('<button></button>').text(this.options.lang.next).addClass('btn btn-secondary sw-btn-next').attr('type', 'button') : null;
+            var btnPrevious = this.options.toolbarSettings.showPreviousButton !== false ? $('<button></button>').text(this.options.lang.previous).addClass('btn btn-secondary sw-btn-prev').attr('type', 'button') : null;
+            var btnGroup = $('<div></div>').addClass('btn-group mr-2 sw-btn-group').attr('role', 'group').append(btnPrevious, btnNext);
 
             // Add extra toolbar buttons
             var btnGroupExtra = null;
 
             if (this.options.toolbarSettings.toolbarExtraButtons && this.options.toolbarSettings.toolbarExtraButtons.length > 0) {
-                btnGroupExtra = $('<div></div>').addClass('btn-group navbar-btn sw-btn-group-extra pull-' + this.options.toolbarSettings.toolbarButtonPosition).attr('role', 'group');
+                btnGroupExtra = $('<div></div>').addClass('btn-group mr-2 sw-btn-group-extra').attr('role', 'group');
                 $.each(this.options.toolbarSettings.toolbarExtraButtons, function (i, n) {
                     btnGroupExtra.append(n.clone(true));
                 });
@@ -167,7 +170,7 @@
             // Append toolbar based on the position
             switch (this.options.toolbarSettings.toolbarPosition) {
                 case 'top':
-                    toolbarTop = $('<nav></nav>').addClass('navbar btn-toolbar sw-toolbar sw-toolbar-top');
+                    toolbarTop = $('<div></div>').addClass('btn-toolbar sw-toolbar sw-toolbar-top justify-content-' + this.options.toolbarSettings.toolbarButtonPosition);
                     toolbarTop.append(btnGroup);
                     if (this.options.toolbarSettings.toolbarButtonPosition === 'left') {
                         toolbarTop.append(btnGroupExtra);
@@ -177,7 +180,7 @@
                     this.container.before(toolbarTop);
                     break;
                 case 'bottom':
-                    toolbarBottom = $('<nav></nav>').addClass('navbar btn-toolbar sw-toolbar sw-toolbar-bottom');
+                    toolbarBottom = $('<div></div>').addClass('btn-toolbar sw-toolbar sw-toolbar-bottom justify-content-' + this.options.toolbarSettings.toolbarButtonPosition);
                     toolbarBottom.append(btnGroup);
                     if (this.options.toolbarSettings.toolbarButtonPosition === 'left') {
                         toolbarBottom.append(btnGroupExtra);
@@ -187,7 +190,7 @@
                     this.container.after(toolbarBottom);
                     break;
                 case 'both':
-                    toolbarTop = $('<nav></nav>').addClass('navbar btn-toolbar sw-toolbar sw-toolbar-top');
+                    toolbarTop = $('<div></div>').addClass('btn-toolbar sw-toolbar sw-toolbar-top justify-content-' + this.options.toolbarSettings.toolbarButtonPosition);
                     toolbarTop.append(btnGroup);
                     if (this.options.toolbarSettings.toolbarButtonPosition === 'left') {
                         toolbarTop.append(btnGroupExtra);
@@ -196,7 +199,7 @@
                     }
                     this.container.before(toolbarTop);
 
-                    toolbarBottom = $('<nav></nav>').addClass('navbar btn-toolbar sw-toolbar sw-toolbar-bottom');
+                    toolbarBottom = $('<div></div>').addClass('btn-toolbar sw-toolbar sw-toolbar-bottom justify-content-' + this.options.toolbarSettings.toolbarButtonPosition);
                     toolbarBottom.append(btnGroup.clone(true));
                     if (this.options.toolbarSettings.toolbarButtonPosition === 'left') {
                         toolbarBottom.append(btnGroupExtra.clone(true));
@@ -206,7 +209,7 @@
                     this.container.after(toolbarBottom);
                     break;
                 default:
-                    toolbarBottom = $('<nav></nav>').addClass('navbar btn-toolbar sw-toolbar sw-toolbar-bottom');
+                    toolbarBottom = $('<div></div>').addClass('btn-toolbar sw-toolbar sw-toolbar-bottom justify-content-' + this.options.toolbarSettings.toolbarButtonPosition);
                     toolbarBottom.append(btnGroup);
                     if (this.options.toolbarSettings.toolbarButtonPosition === 'left') {
                         toolbarBottom.append(btnGroupExtra);
@@ -344,10 +347,10 @@
             // Get the direction of step navigation
             var stepDirection = '';
             var elm = this.steps.eq(idx);
-            var contentURL = (elm.data('content-url') && elm.data('content-url').length > 0) ? elm.data('content-url') : this.options.contentURL;
+            var contentURL = elm.data('content-url') && elm.data('content-url').length > 0 ? elm.data('content-url') : this.options.contentURL;
 
             if (this.current_index !== null && this.current_index !== idx) {
-                stepDirection = (this.current_index < idx) ? "forward" : "backward";
+                stepDirection = this.current_index < idx ? "forward" : "backward";
             }
 
             // Trigger "leaveStep" event
@@ -357,12 +360,12 @@
 
             if (contentURL && contentURL.length > 0 && (!elm.data('has-content') || !this.options.contentCache)) {
                 // Get ajax content and then show step
-                var selPage = (elm.length > 0) ? $(elm.attr("href"), this.main) : null;
+                var selPage = elm.length > 0 ? $(elm.attr("href"), this.main) : null;
 
                 var ajaxSettings = $.extend(true, {}, {
                     url: contentURL,
                     type: "POST",
-                    data: ({step_number: idx}),
+                    data: { step_number: idx },
                     dataType: "text",
                     beforeSend: function () {
                         elm.parent('li').addClass('loading');
@@ -392,26 +395,27 @@
             var mi = this;
             // Get current step elements
             var curTab = this.steps.eq(this.current_index);
-            var curPage = (curTab.length > 0) ? $(curTab.attr("href"), this.main) : null;
+            var curPage = curTab.length > 0 ? $(curTab.attr("href"), this.main) : null;
             // Get step to show elements
             var selTab = this.steps.eq(idx);
-            var selPage = (selTab.length > 0) ? $(selTab.attr("href"), this.main) : null;
+            var selPage = selTab.length > 0 ? $(selTab.attr("href"), this.main) : null;
             // Get the direction of step navigation
             var stepDirection = '';
             if (this.current_index !== null && this.current_index !== idx) {
-                stepDirection = (this.current_index < idx) ? "forward" : "backward";
+                stepDirection = this.current_index < idx ? "forward" : "backward";
             }
 
             var stepPosition = 'middle';
             if (idx === 0) {
                 stepPosition = 'first';
-            } else if (idx === (this.steps.length - 1)) {
+            } else if (idx === this.steps.length - 1) {
                 stepPosition = 'final';
             }
 
             this.options.transitionEffect = this.options.transitionEffect.toLowerCase();
             this.pages.finish();
-            if (this.options.transitionEffect === 'slide') { // normal slide
+            if (this.options.transitionEffect === 'slide') {
+                // normal slide
                 if (curPage && curPage.length > 0) {
                     curPage.slideUp('fast', this.options.transitionEasing, function () {
                         selPage.slideDown(mi.options.transitionSpeed, mi.options.transitionEasing);
@@ -419,7 +423,8 @@
                 } else {
                     selPage.slideDown(this.options.transitionSpeed, this.options.transitionEasing);
                 }
-            } else if (this.options.transitionEffect === 'fade') { // normal fade
+            } else if (this.options.transitionEffect === 'fade') {
+                // normal fade
                 if (curPage && curPage.length > 0) {
                     curPage.fadeOut('fast', this.options.transitionEasing, function () {
                         selPage.fadeIn('fast', mi.options.transitionEasing, function () {
@@ -474,7 +479,7 @@
                 } else {
                     $('.sw-btn-prev', this.main).removeClass("disabled");
                 }
-                if ((this.steps.length - 1) <= idx) {
+                if (this.steps.length - 1 <= idx) {
                     $('.sw-btn-next', this.main).addClass("disabled");
                 } else {
                     $('.sw-btn-next', this.main).removeClass("disabled");
@@ -483,17 +488,19 @@
             return true;
         },
 
-// HELPER FUNCTIONS
+        // HELPER FUNCTIONS
 
         _keyNav: function (e) {
             var mi = this;
             // Keyboard navigation
             switch (e.which) {
-                case 37: // left
+                case 37:
+                    // left
                     mi._showPrevious();
                     e.preventDefault();
                     break;
-                case 39: // right
+                case 39:
+                    // right
                     mi._showNext();
                     e.preventDefault();
                     break;
@@ -504,9 +511,8 @@
         _fixHeight: function (idx) {
             // Auto adjust height of the container
             if (this.options.autoAdjustHeight) {
-                var selPage = (this.steps.eq(idx).length > 0) ? $(this.steps.eq(idx).attr("href"), this.main) : null;
-                this.container.finish().animate({height: selPage.outerHeight()}, this.options.transitionSpeed, function () {
-                });
+                var selPage = this.steps.eq(idx).length > 0 ? $(this.steps.eq(idx).attr("href"), this.main) : null;
+                this.container.finish().animate({ minHeight: selPage.outerHeight() }, this.options.transitionSpeed, function () {});
             }
             return true;
         },
@@ -525,7 +531,7 @@
             }
         },
 
-// PUBLIC FUNCTIONS
+        // PUBLIC FUNCTIONS
 
         theme: function (v) {
             if (this.options.theme === v) {
@@ -568,7 +574,7 @@
             var mi = this;
             stepArray = $.isArray(stepArray) ? stepArray : [stepArray];
             var selSteps = $.grep(this.steps, function (n, i) {
-                return ($.inArray(i, stepArray) !== -1 && i !== mi.current_index);
+                return $.inArray(i, stepArray) !== -1 && i !== mi.current_index;
             });
             if (selSteps && selSteps.length > 0) {
                 switch (state) {
@@ -614,5 +620,4 @@
             }
         }
     };
-
 })(jQuery, window, document);
