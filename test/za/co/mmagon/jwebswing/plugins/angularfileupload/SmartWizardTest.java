@@ -10,16 +10,20 @@ import za.co.mmagon.jwebswing.plugins.smartwizard.SmartWizardStepItem;
 import za.co.mmagon.jwebswing.plugins.smartwizard.SmartWizardThemes;
 import za.co.mmagon.jwebswing.plugins.smartwizard.options.SmartWizardTransitionEffects;
 
-public class SmartWizardTest extends BaseTestClass
+public class SmartWizardTest
+		extends BaseTestClass
 {
 	@org.junit.jupiter.api.Test
 	@SuppressWarnings("unchecked")
 	public void testHtml()
 	{
 		SmartWizard sw = new SmartWizard("test");
-		sw.getSteps().add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
-		sw.getSteps().add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
-		sw.getSteps().add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
+		sw.getSteps()
+		  .add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
+		sw.getSteps()
+		  .add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
+		sw.getSteps()
+		  .add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
 		System.out.println(sw.toString(0));
 	}
 
@@ -28,7 +32,8 @@ public class SmartWizardTest extends BaseTestClass
 	{
 		Page p = getInstance();
 		SmartWizard sw = new SmartWizard("test");
-		p.add(sw);
+		p.getBody()
+		 .add(sw);
 		System.out.println(p.toString(0));
 	}
 
@@ -44,9 +49,12 @@ public class SmartWizardTest extends BaseTestClass
 	{
 		SmartWizard sw = new SmartWizard("test");
 
-		sw.getSteps().add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
+		sw.getSteps()
+		  .add(new SmartWizardStep(new Div(), new SmartWizardStepItem("Header", new SmallText("Description"))));
 
-		sw.getFeature().getOptions().setContentCache(true);
+		sw.getFeature()
+		  .getOptions()
+		  .setContentCache(true);
 		System.out.println(sw.renderJavascript());
 	}
 
@@ -54,13 +62,26 @@ public class SmartWizardTest extends BaseTestClass
 	public void testJsDeeperOptions()
 	{
 		SmartWizard sw = new SmartWizard("test");
-		sw.getFeature().getOptions().setContentCache(true);
-		sw.getFeature().getOptions().setCycleSteps(true);
-		sw.getFeature().getOptions().getLang().setNext("Next Text");
-		sw.getFeature().getOptions().setContentCache(true);
+		sw.getFeature()
+		  .getOptions()
+		  .setContentCache(true);
+		sw.getFeature()
+		  .getOptions()
+		  .setCycleSteps(true);
+		sw.getFeature()
+		  .getOptions()
+		  .getLang()
+		  .setNext("Next Text");
+		sw.getFeature()
+		  .getOptions()
+		  .setContentCache(true);
 
-		sw.getFeature().getOptions().setTheme(SmartWizardThemes.Circles);
-		sw.getFeature().getOptions().setTransitionEffect(SmartWizardTransitionEffects.slide);
+		sw.getFeature()
+		  .getOptions()
+		  .setTheme(SmartWizardThemes.Circles);
+		sw.getFeature()
+		  .getOptions()
+		  .setTransitionEffect(SmartWizardTransitionEffects.slide);
 
 		System.out.println(sw.renderJavascript());
 
