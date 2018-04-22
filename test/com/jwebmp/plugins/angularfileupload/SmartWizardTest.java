@@ -17,7 +17,6 @@
 
 package com.jwebmp.plugins.angularfileupload;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.Page;
 import com.jwebmp.base.html.Div;
 import com.jwebmp.base.html.SmallText;
@@ -28,7 +27,7 @@ import com.jwebmp.plugins.smartwizard.SmartWizardThemes;
 import com.jwebmp.plugins.smartwizard.options.SmartWizardTransitionEffects;
 
 public class SmartWizardTest
-		extends BaseTestClass
+
 {
 	@org.junit.jupiter.api.Test
 	@SuppressWarnings("unchecked")
@@ -47,7 +46,7 @@ public class SmartWizardTest
 	@org.junit.jupiter.api.Test
 	public void testPage()
 	{
-		Page p = getInstance();
+		Page p = new Page();
 		SmartWizard sw = new SmartWizard("test");
 		p.getBody()
 		 .add(sw);
