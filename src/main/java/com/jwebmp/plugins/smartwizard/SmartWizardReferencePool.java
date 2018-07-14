@@ -26,10 +26,12 @@ import com.jwebmp.base.servlets.interfaces.ReferencePool;
  * @author GedMarc
  * @since 20 Apr 2016
  */
-public enum SmartWizardReferencePool implements ReferencePool
+public enum SmartWizardReferencePool
+		implements ReferencePool
 {
 	SmartWizardReference(new JavascriptReference("SmartWizard", 1.0, "bower_components/smartwizard/dist/js/jquery.smartWizard.min.js"),
-	                     new CSSReference("SmartWizard", 1.0, "bower_components/smartwizard/dist/css/smart_wizard.min.css")),;
+	                     new CSSReference("SmartWizard", 1.0, "bower_components/smartwizard/dist/css/smart_wizard.min.css")),
+	;
 	/**
 	 * The actual javascript
 	 */
@@ -59,28 +61,6 @@ public enum SmartWizardReferencePool implements ReferencePool
 	}
 
 	/**
-	 * Returns the javascript reference
-	 *
-	 * @return
-	 */
-	@Override
-	public JavascriptReference getJavaScriptReference()
-	{
-		return javaScriptReference;
-	}
-
-	/**
-	 * Sets the javascript reference
-	 *
-	 * @param javaScriptReference
-	 */
-	@Override
-	public void setJavaScriptReference(JavascriptReference javaScriptReference)
-	{
-		this.javaScriptReference = javaScriptReference;
-	}
-
-	/**
 	 * Gets the cSS reference
 	 *
 	 * @return
@@ -100,5 +80,27 @@ public enum SmartWizardReferencePool implements ReferencePool
 	public void setCssReference(CSSReference cssReference)
 	{
 		this.cssReference = cssReference;
+	}
+
+	/**
+	 * Returns the javascript reference
+	 *
+	 * @return
+	 */
+	@Override
+	public JavascriptReference getJavaScriptReference()
+	{
+		return javaScriptReference;
+	}
+
+	/**
+	 * Sets the javascript reference
+	 *
+	 * @param javaScriptReference
+	 */
+	@Override
+	public void setJavaScriptReference(JavascriptReference javaScriptReference)
+	{
+		this.javaScriptReference = javaScriptReference;
 	}
 }

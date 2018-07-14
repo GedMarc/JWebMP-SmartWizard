@@ -114,7 +114,6 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>>
 	 */
 	private SmartWizardAnchorSettings anchorSettings;
 
-
 	/**
 	 * The options for the component
 	 */
@@ -132,7 +131,6 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>>
 	{
 		return selected;
 	}
-
 
 	/**
 	 * specify the selected step on the first load Default 0

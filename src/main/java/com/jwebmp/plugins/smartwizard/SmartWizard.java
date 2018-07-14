@@ -42,7 +42,6 @@ public class SmartWizard<J extends SmartWizard<J>>
 	 */
 	private List<SmartWizardStep> steps;
 
-
 	/**
 	 * Configures the page for this component
 	 */

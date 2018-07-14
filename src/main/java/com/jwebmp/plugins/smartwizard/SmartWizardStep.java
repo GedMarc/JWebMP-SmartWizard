@@ -55,7 +55,6 @@ public class SmartWizardStep
 		this.stepTitle = stepTitle;
 	}
 
-
 	/**
 	 * Returns the step contents
 	 *
