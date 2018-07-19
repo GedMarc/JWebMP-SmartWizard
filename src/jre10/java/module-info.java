@@ -11,4 +11,5 @@ module com.jwebmp.plugins.smartwizard {
 
 	requires java.validation;
 	requires java.logging;
+	requires com.google.guice;
 }
