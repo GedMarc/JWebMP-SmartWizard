@@ -17,9 +17,9 @@
 
 package com.jwebmp.plugins.smartwizard;
 
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.ListItem;
-import com.jwebmp.base.html.SmallText;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.SmallText;
 
 public class SmartWizardStepItem
 		extends ListItem<SmartWizardStepItem>

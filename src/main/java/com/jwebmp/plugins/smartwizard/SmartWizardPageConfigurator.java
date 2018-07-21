@@ -18,11 +18,11 @@
 package com.jwebmp.plugins.smartwizard;
 
 import com.google.inject.Singleton;
-import com.jwebmp.Page;
-import com.jwebmp.PageConfigurator;
-import com.jwebmp.base.angular.AngularPageConfigurator;
-import com.jwebmp.plugins.PluginInformation;
-import com.jwebmp.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.PageConfigurator;
+import com.jwebmp.core.base.angular.AngularPageConfigurator;
+import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 
 @PluginInformation(pluginName = "Smart Wizard",
 		pluginUniqueName = "jwebswing-smart-wizard",

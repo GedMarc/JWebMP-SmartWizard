@@ -17,9 +17,9 @@
 
 package com.jwebmp.plugins.angularfileupload;
 
-import com.jwebmp.Page;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.SmallText;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.SmallText;
 import com.jwebmp.plugins.smartwizard.SmartWizard;
 import com.jwebmp.plugins.smartwizard.SmartWizardStep;
 import com.jwebmp.plugins.smartwizard.SmartWizardStepItem;

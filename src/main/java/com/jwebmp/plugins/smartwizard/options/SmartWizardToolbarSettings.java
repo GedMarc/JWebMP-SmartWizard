@@ -17,9 +17,9 @@
 
 package com.jwebmp.plugins.smartwizard.options;
 
-import com.jwebmp.generics.LeftOrRight;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.htmlbuilder.javascript.JavascriptFunction;
+import com.jwebmp.core.generics.LeftOrRight;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavascriptFunction;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;

@@ -17,7 +17,7 @@
 
 package com.jwebmp.plugins.smartwizard;
 
-import com.jwebmp.base.references.CSSReference;
+import com.jwebmp.core.base.references.CSSReference;
 import com.jwebmp.plugins.smartwizard.interfaces.ISmartWizardTheme;
 
 public enum SmartWizardThemes

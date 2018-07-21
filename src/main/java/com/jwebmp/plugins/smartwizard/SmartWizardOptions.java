@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.smartwizard;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.smartwizard.options.*;
 
 import javax.validation.constraints.NotNull;

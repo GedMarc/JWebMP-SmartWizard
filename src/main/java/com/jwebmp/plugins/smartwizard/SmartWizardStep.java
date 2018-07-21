@@ -17,7 +17,7 @@
 
 package com.jwebmp.plugins.smartwizard;
 
-import com.jwebmp.base.html.Div;
+import com.jwebmp.core.base.html.Div;
 
 import java.io.Serializable;
 

@@ -17,7 +17,7 @@
 
 package com.jwebmp.plugins.smartwizard.options;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 public class SmartWizardAnchorSettings
 		extends JavaScriptPart

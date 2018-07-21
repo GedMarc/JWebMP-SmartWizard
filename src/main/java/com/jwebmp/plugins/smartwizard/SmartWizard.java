@@ -17,10 +17,10 @@
 
 package com.jwebmp.plugins.smartwizard;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.base.html.interfaces.GlobalChildren;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.smartwizard.interfaces.SmartWizardFeatures;
 
 import javax.validation.constraints.NotNull;
@@ -67,7 +67,7 @@ public class SmartWizard<J extends SmartWizard<J>>
 					.getToolbarExtraButtons()
 					.add(new SmartWizardCancelFunction());*/
 
-			com.jwebmp.base.html.List stepList = new com.jwebmp.base.html.List();
+			com.jwebmp.core.base.html.List stepList = new com.jwebmp.core.base.html.List();
 			Div actualContent = new Div();
 			for (SmartWizardStep step : getSteps())
 			{
