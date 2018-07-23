@@ -19,10 +19,10 @@ package com.jwebmp.plugins.smartwizard;
 
 import com.google.inject.Singleton;
 import com.jwebmp.core.Page;
-import com.jwebmp.core.PageConfigurator;
 import com.jwebmp.core.base.angular.AngularPageConfigurator;
 import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.core.services.IPageConfigurator;
 
 @PluginInformation(pluginName = "Smart Wizard",
 		pluginUniqueName = "jwebswing-smart-wizard",
@@ -42,7 +42,7 @@ import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 @Singleton
 @SuppressWarnings("unused")
 public class SmartWizardPageConfigurator
-		extends PageConfigurator
+		implements IPageConfigurator
 {
 
 	private static SmartWizardThemes theme = SmartWizardThemes.Circles;

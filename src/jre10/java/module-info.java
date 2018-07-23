@@ -1,3 +1,6 @@
+import com.jwebmp.core.services.IPageConfigurator;
+import com.jwebmp.plugins.smartwizard.SmartWizardPageConfigurator;
+
 module com.jwebmp.plugins.smartwizard {
 
 	exports com.jwebmp.plugins.smartwizard;
@@ -12,4 +15,7 @@ module com.jwebmp.plugins.smartwizard {
 	requires java.validation;
 	requires java.logging;
 	requires com.google.guice;
+
+	provides IPageConfigurator with SmartWizardPageConfigurator;
+
 }
