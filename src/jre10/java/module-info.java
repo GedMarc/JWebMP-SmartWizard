@@ -17,5 +17,8 @@ module com.jwebmp.plugins.smartwizard {
 	requires com.google.guice;
 
 	provides IPageConfigurator with SmartWizardPageConfigurator;
-
+	opens com.jwebmp.plugins.smartwizard to com.fasterxml.jackson.databind,com.jwebmp.core;
+	opens com.jwebmp.plugins.smartwizard.options to com.fasterxml.jackson.databind,com.jwebmp.core;
+	opens com.jwebmp.plugins.smartwizard.interfaces to com.fasterxml.jackson.databind,com.jwebmp.core;
+	opens com.jwebmp.plugins.smartwizard.events to com.fasterxml.jackson.databind,com.jwebmp.core;
 }
