@@ -24,6 +24,8 @@ import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 import com.jwebmp.core.services.IPageConfigurator;
 
+import javax.validation.constraints.NotNull;
+
 @PluginInformation(pluginName = "Smart Wizard",
 		pluginUniqueName = "jwebswing-smart-wizard",
 		pluginDescription = "The awesome jQuery step wizard plugin with Bootstrap support",
@@ -75,6 +77,7 @@ public class SmartWizardPageConfigurator
 		SmartWizardPageConfigurator.theme = theme;
 	}
 
+	@NotNull
 	@Override
 	public Page configure(Page page)
 	{
