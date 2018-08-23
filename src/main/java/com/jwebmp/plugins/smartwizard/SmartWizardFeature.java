@@ -19,7 +19,6 @@ package com.jwebmp.plugins.smartwizard;
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.smartwizard.interfaces.SmartWizardFeatures;
 
 import javax.validation.constraints.NotNull;
 
@@ -31,8 +30,8 @@ import javax.validation.constraints.NotNull;
  * @since 2013/01/16
  */
 public class SmartWizardFeature
-		extends Feature<SmartWizardOptions, SmartWizardFeature>
-		implements SmartWizardFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, SmartWizardOptions, SmartWizardFeature>
+
 {
 
 	private static final long serialVersionUID = 1L;
@@ -54,15 +53,13 @@ public class SmartWizardFeature
 	@Override
 	public int hashCode()
 	{
-		int hash = 7;
-		hash = 79 * hash + (getID().hashCode());
-		return hash;
+		return super.hashCode();
 	}
 
 	@Override
 	public boolean equals(Object obj)
 	{
-		return this == obj || obj != null && getClass() == obj.getClass() && super.equals(obj);
+		return super.equals(obj);
 	}
 
 	/**
