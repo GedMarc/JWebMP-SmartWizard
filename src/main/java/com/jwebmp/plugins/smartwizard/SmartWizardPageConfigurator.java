@@ -46,7 +46,10 @@ import javax.validation.constraints.NotNull;
 public class SmartWizardPageConfigurator
 		implements IPageConfigurator
 {
-
+	/**
+	 * If this configurator is enabled
+	 */
+	private static boolean enabled = true;
 	private static SmartWizardThemes theme = SmartWizardThemes.Circles;
 
 	/**
@@ -58,13 +61,38 @@ public class SmartWizardPageConfigurator
 	}
 
 	/**
+	 * Method isEnabled returns the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @return the enabled (type boolean) of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static boolean isEnabled()
+	{
+		return SmartWizardPageConfigurator.enabled;
+	}
+
+	/**
+	 * Method setEnabled sets the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @param mustEnable
+	 * 		the enabled of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static void setEnabled(boolean mustEnable)
+	{
+		SmartWizardPageConfigurator.enabled = mustEnable;
+	}
+
+	/**
 	 * Gets the current theme
 	 *
 	 * @return
 	 */
 	public static SmartWizardThemes getTheme()
 	{
-		return theme;
+		return SmartWizardPageConfigurator.theme;
 	}
 
 	/**
@@ -88,8 +116,14 @@ public class SmartWizardPageConfigurator
 
 			page.addJavaScriptReference(SmartWizardReferencePool.SmartWizardReference.getJavaScriptReference());
 			page.addCssReference(SmartWizardReferencePool.SmartWizardReference.getCssReference());
-			page.addCssReference(theme.getThemeReference());
+			page.addCssReference(SmartWizardPageConfigurator.theme.getThemeReference());
 		}
 		return page;
+	}
+
+	@Override
+	public boolean enabled()
+	{
+		return SmartWizardPageConfigurator.enabled;
 	}
 }
