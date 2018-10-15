@@ -29,7 +29,7 @@ import java.util.List;
 
 @ComponentInformation(name = "SmartWizard",
 		description = "Smart Wizard is a flexible and heavily customizable jQuery step wizard plugin " + "with Bootstrap support. ",
-		url = "https://github.com/GedMarc/JWebSwing-SmartWizard")
+		url = "https://github.com/GedMarc/JWebMP-SmartWizard")
 public class SmartWizard<J extends SmartWizard<J>>
 		extends Div<IComponentHierarchyBase, NoAttributes, SmartWizardFeatures, ISmartWizardEvents, J>
 {

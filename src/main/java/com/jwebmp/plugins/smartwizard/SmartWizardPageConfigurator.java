@@ -33,9 +33,9 @@ import javax.validation.constraints.NotNull;
 		pluginDependancyUniqueIDs = "jquery,bootstrap",
 		pluginCategories = "smartwizard,bootstrap,forms,angular,validation,wizard",
 		pluginSubtitle = "The awesome jQuery step wizard plugin with Bootstrap support",
-		pluginGitUrl = "https://github.com/GedMarc/JWebSwing-SmartWizard",
-		pluginSourceUrl = "https://github.com/GedMarc/JWebSwing-SmartWizard",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-SmartWizard/wiki",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMP-SmartWizard",
+		pluginSourceUrl = "https://github.com/GedMarc/JWebMP-SmartWizard",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-SmartWizard/wiki",
 		pluginOriginalHomepage = "http://techlaboratory.net/angularfileupload/documentation",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/SmartWizard.jar/download",
 		pluginIconUrl = "jqueryuidatetimepicker.png",
@@ -44,7 +44,7 @@ import javax.validation.constraints.NotNull;
 @Singleton
 @SuppressWarnings("unused")
 public class SmartWizardPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<SmartWizardPageConfigurator>
 {
 	/**
 	 * If this configurator is enabled
