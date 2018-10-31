@@ -37,7 +37,6 @@ public class SmartWizardOptions<J extends SmartWizardOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * specify the selected step on the first load Default 0

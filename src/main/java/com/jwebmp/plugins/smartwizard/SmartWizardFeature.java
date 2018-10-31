@@ -34,7 +34,6 @@ public class SmartWizardFeature
 
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private SmartWizardOptions options;
 

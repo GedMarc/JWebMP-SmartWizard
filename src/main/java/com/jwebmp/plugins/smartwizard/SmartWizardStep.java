@@ -19,13 +19,11 @@ package com.jwebmp.plugins.smartwizard;
 
 import com.jwebmp.core.base.html.Div;
 
-import java.io.Serializable;
-
 public class SmartWizardStep
-		implements Serializable
+
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The actual contents of the step
 	 */
