@@ -22,8 +22,6 @@ import com.jwebmp.core.base.html.Div;
 public class SmartWizardStep
 
 {
-
-
 	/**
 	 * The actual contents of the step
 	 */

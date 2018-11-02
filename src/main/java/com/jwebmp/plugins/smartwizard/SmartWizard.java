@@ -58,28 +58,25 @@ public class SmartWizard<J extends SmartWizard<J>>
 	{
 		if (!isInitialized())
 		{
-		/*	getFeature().getOptions()
-					.getToolbarSettings()
-					.getToolbarExtraButtons()
-					.add(new SmartWizardFinishFunction());
-			getFeature().getOptions()
-					.getToolbarSettings()
-					.getToolbarExtraButtons()
-					.add(new SmartWizardCancelFunction());*/
-
 			com.jwebmp.core.base.html.List stepList = new com.jwebmp.core.base.html.List();
 			Div actualContent = new Div();
-			for (SmartWizardStep step : getSteps())
+			@NotNull List<SmartWizardStep> steps1 = getSteps();
+			for (int i = 0; i < steps1.size(); i++)
 			{
-				stepList.add(step.getStepTitle());
+				SmartWizardStep step = steps1.get(i);
 				actualContent.add(step.getStepContents());
-				int index = getSteps().indexOf(step);
+
+				String id = "step_" + step.getStepTitle()
+				                          .getID() + "_" + i;
+
+				stepList.add(step.getStepTitle());
+
 				step.getStepTitle()
-				    .setID(step.getStepTitle()
-				               .getID() + "_" + index);
+				    .getStepLink()
+				    .setDirectToAddress("#" + id);
+
 				step.getStepContents()
-				    .setID("step_" + step.getStepTitle()
-				                         .getID() + "_" + index);
+				    .setID(id);
 			}
 			add(stepList);
 			add(actualContent);

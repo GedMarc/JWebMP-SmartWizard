@@ -53,6 +53,39 @@ public class SmartWizardStepItem
 		super.init();
 	}
 
+	public String getTitle()
+	{
+		return title;
+	}
+
+	public SmartWizardStepItem setTitle(String title)
+	{
+		this.title = title;
+		return this;
+	}
+
+	public Link getStepLink()
+	{
+		return stepLink;
+	}
+
+	public SmartWizardStepItem setStepLink(Link stepLink)
+	{
+		this.stepLink = stepLink;
+		return this;
+	}
+
+	public SmallText getStepDescription()
+	{
+		return stepDescription;
+	}
+
+	public SmartWizardStepItem setStepDescription(SmallText stepDescription)
+	{
+		this.stepDescription = stepDescription;
+		return this;
+	}
+
 	@Override
 	public int hashCode()
 	{
